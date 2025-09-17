@@ -68,24 +68,37 @@ body::before {
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 400px;
+  grid-template-rows: auto 1fr auto auto;
   grid-gap: 2rem;
   min-height: 100vh;
+  grid-template-areas:
+    "main sidebar"
+    "main sidebar"
+    "excluded excluded"
+    "footer footer";
 }
 
 @media (max-width: 1200px) {
   .app {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "sidebar"
+      "excluded"
+      "footer";
     max-width: 900px;
   }
 }
 
 .main-content {
+  grid-area: main;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .sidebar {
+  grid-area: sidebar;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -365,29 +378,76 @@ body::before {
   flex-wrap: wrap;
 }
 
-.excluded-ships {
+.excluded-ships-bottom {
+  grid-area: excluded;
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 2rem;
   box-shadow: 
     0 10px 30px rgba(0,0,0,0.2),
     inset 0 1px 0 rgba(255,255,255,0.1);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.excluded-ships h3 {
+.excluded-ships-bottom h3 {
   color: var(--danger-red);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
-.excluded-ships h3::before {
+.excluded-ships-bottom h3::before {
   content: '🚫';
+}
+
+.excluded-ships-bottom .excluded-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.excluded-ships-bottom .excluded-item {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background: rgba(255, 75, 87, 0.1);
+  border: 1px solid rgba(255, 75, 87, 0.2);
+  border-radius: 25px;
+  transition: all 0.2s ease;
+  min-width: auto;
+  white-space: nowrap;
+}
+
+.excluded-ships-bottom .excluded-item:hover {
+  background: rgba(255, 75, 87, 0.15);
+  transform: translateY(-2px);
+}
+
+.excluded-ships-bottom .empty-excluded {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 2rem;
+  width: 100%;
+}
+
+.excluded-ships-bottom #clearAllExcluded {
+  margin: 0 auto;
+  display: block;
+  padding: 0.75rem 2rem;
 }
 
 .excluded-list {
@@ -472,14 +532,14 @@ body::before {
 }
 
 .footer {
-  grid-column: 1 / -1;
+  grid-area: footer;
   color: var(--text-muted);
-  margin-top: 2rem;
   padding: 1.5rem;
   border-top: 1px solid var(--border-subtle);
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: 20px 20px 0 0;
+  margin-top: 0;
 }
 
 .footer-content {
