@@ -9,127 +9,69 @@ const KNOWN_NATIONS = [
 ];
 
 const embeddedShips = [
-  { name: "Admiral Nakhimov", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Alexander Nevsky", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "AL Shimakaze", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Archerfish", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "ARP Yamato", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Astoria", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Attilio Regolo", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Audacious", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Austin", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Balao", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "BA Montana", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "BA Takahashi", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Bourgogne", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Brennus", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Brisbane", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Bungo", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Cassard", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Castilla", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Cerberus", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Colbert", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Conqueror", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Cristoforo Colombo", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Daring", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Defence", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Delny", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Des Moines", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Druid", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Elbing", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Essex", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Forrest Sherman", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Franklin D. Roosevelt", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Gato", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Gdańsk", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Gearing", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Georg Hoffmann", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Gibraltar", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Goliath", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Gouden Leeuw", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Grozovoi", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Großer Kurfürst", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Hakuryu", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Halland", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Harugumo", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Hayate", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Henri IV", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Hildebrand", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Hindenburg", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Incomparable", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Jinan", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Khabarovsk", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Kitakami", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Kléber", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Kléber CLR", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Komissar", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Kreml", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "La Pampa", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Libertad", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Louisiana", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Lüshun", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Malta", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Manfred von Richthofen", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Marceau", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Marseille", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Max Immelmann", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Mecklenburg", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Midway", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Minotaur", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Montana", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Moskva", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Napoli", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Napoli B", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Ohio", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "PBSC020 Monmouth", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Petropavlovsk", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Plymouth", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Preussen", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Prins van Oranje", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Puerto Rico", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Ragnar", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Rhode Island", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Ruggiero di Lauria", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "République", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Salem", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "San Martín", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Schlieffen", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Sevastopol", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Shikishima", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Shimakaze", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Shinano", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Sicilia", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Slava", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Smolensk", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Smolensk B", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Småland", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Somers", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "St. Vincent", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Stalingrad", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Svea", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Thrasher", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Thunderer", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Tromp", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "U-2501", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "U-4501", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Vampire II", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Venezia", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Vermont", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Vladimir Monomakh", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Wisconsin", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Worcester", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Yamato", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Yari", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Yodo", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Yoshino", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Yoshino B", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Yueyang", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Z-42", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Z-52", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Zao", tier: 10, nation: "Unknown", class: "Unknown" },
-  { name: "Álvaro de Bazán", tier: 10, nation: "Unknown", class: "Unknown" },
-  // Tier XI (Superships) - currently sample entries; say the word and I will embed full Tier XI as well
+  { name: "Yamato", tier: 10, nation: "Japan", class: "Battleship" },
   { name: "Satsuma", tier: 11, nation: "Japan", class: "Battleship" },
+  { name: "Montana", tier: 10, nation: "USA", class: "Battleship" },
+  { name: "Vermont", tier: 11, nation: "USA", class: "Battleship" },
+  { name: "Großer Kurfürst", tier: 10, nation: "Germany", class: "Battleship" },
+  { name: "Preußen", tier: 11, nation: "Germany", class: "Battleship" },
+  { name: "Conqueror", tier: 10, nation: "UK", class: "Battleship" },
+  { name: "Incomparable", tier: 11, nation: "UK", class: "Battleship" },
+  { name: "République", tier: 10, nation: "France", class: "Battleship" },
+  { name: "Bourgogne", tier: 10, nation: "France", class: "Battleship" },
+  
+  { name: "Des Moines", tier: 10, nation: "USA", class: "Cruiser" },
+  { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
+  { name: "Hindenburg", tier: 10, nation: "Germany", class: "Cruiser" },
+  { name: "Schlieffen", tier: 11, nation: "Germany", class: "Cruiser" },
+  { name: "Zao", tier: 10, nation: "Japan", class: "Cruiser" },
+  { name: "Yoshino", tier: 10, nation: "Japan", class: "Cruiser" },
+  { name: "Minotaur", tier: 10, nation: "UK", class: "Cruiser" },
+  { name: "Plymouth", tier: 11, nation: "UK", class: "Cruiser" },
+  { name: "Henri IV", tier: 10, nation: "France", class: "Cruiser" },
+  { name: "Marseille", tier: 11, nation: "France", class: "Cruiser" },
+  
+  { name: "Gearing", tier: 10, nation: "USA", class: "Destroyer" },
+  { name: "Forrest Sherman", tier: 10, nation: "USA", class: "Destroyer" },
+  { name: "Z-52", tier: 10, nation: "Germany", class: "Destroyer" },
+  { name: "Elbing", tier: 10, nation: "Germany", class: "Destroyer" },
+  { name: "Shimakaze", tier: 10, nation: "Japan", class: "Destroyer" },
+  { name: "Harugumo", tier: 10, nation: "Japan", class: "Destroyer" },
+  { name: "Daring", tier: 10, nation: "UK", class: "Destroyer" },
+  { name: "Druid", tier: 10, nation: "UK", class: "Destroyer" },
+  { name: "Kléber", tier: 10, nation: "France", class: "Destroyer" },
+  { name: "Marceau", tier: 10, nation: "France", class: "Destroyer" },
+  
+  { name: "Midway", tier: 10, nation: "USA", class: "Carrier" },
+  { name: "Franklin D. Roosevelt", tier: 10, nation: "USA", class: "Carrier" },
+  { name: "Manfred von Richthofen", tier: 10, nation: "Germany", class: "Carrier" },
+  { name: "Max Immelmann", tier: 11, nation: "Germany", class: "Carrier" },
+  { name: "Hakuryū", tier: 10, nation: "Japan", class: "Carrier" },
+  { name: "Shōkaku", tier: 10, nation: "Japan", class: "Carrier" },
+  { name: "Audacious", tier: 10, nation: "UK", class: "Carrier" },
+  { name: "Eagle", tier: 11, nation: "UK", class: "Carrier" },
+  
+  { name: "Balao", tier: 10, nation: "USA", class: "Submarine" },
+  { name: "U-4501", tier: 10, nation: "Germany", class: "Submarine" },
+  { name: "I-56", tier: 10, nation: "Japan", class: "Submarine" },
+  
+  { name: "Kremlin", tier: 10, nation: "USSR", class: "Battleship" },
+  { name: "Slava", tier: 10, nation: "USSR", class: "Battleship" },
+  { name: "Moskva", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Petropavlovsk", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Grozovoi", tier: 10, nation: "USSR", class: "Destroyer" },
+  { name: "Khabarovsk", tier: 10, nation: "USSR", class: "Destroyer" },
+  
+  { name: "Cristoforo Colombo", tier: 10, nation: "Italy", class: "Battleship" },
+  { name: "Venezia", tier: 10, nation: "Italy", class: "Cruiser" },
+  { name: "Paolo Emilio", tier: 10, nation: "Italy", class: "Destroyer" },
+  
+  { name: "Halland", tier: 10, nation: "Europe", class: "Destroyer" },
+  { name: "Småland", tier: 10, nation: "Europe", class: "Destroyer" },
+  
+  { name: "Yueyang", tier: 10, nation: "Pan-Asia", class: "Destroyer" },
+  
+  // Tier XI Superships
   { name: "Hannover", tier: 11, nation: "Germany", class: "Battleship" },
   { name: "Conde", tier: 11, nation: "France", class: "Cruiser" },
   { name: "Yamagiri", tier: 11, nation: "Japan", class: "Destroyer" },
@@ -137,24 +79,23 @@ const embeddedShips = [
 ];
 
 async function loadShips() {
-  // Use embedded by default to support file:// usage
-  let data = (typeof window !== 'undefined' && window.EMBEDDED_SHIPS) ? window.EMBEDDED_SHIPS : embeddedShips;
-
-  // If served via http(s), try to load ships.json to allow easy editing/expansion
-  if (location.protocol.startsWith("http")) {
-    try {
-      const res = await fetch("ships.json", { cache: "no-store" });
-      if (res.ok) {
-        const json = await res.json();
-        if (Array.isArray(json)) data = json;
+  // First try to load from ships.json
+  try {
+    const response = await fetch('./ships.json');
+    if (response.ok) {
+      const externalShips = await response.json();
+      if (externalShips && externalShips.length > 0) {
+        console.log(`Loaded ${externalShips.length} ships from ships.json`);
+        return externalShips;
       }
-    } catch (e) {
-      // Keep embedded data as fallback
-      console.warn("Falling back to embedded ship list:", e);
     }
+  } catch (e) {
+    console.warn('Failed to load ships.json, using embedded data:', e);
   }
-
-  return data;
+  
+  // Fallback to embedded data if ships.json fails or is empty
+  console.log(`Using embedded data: ${embeddedShips.length} ships`);
+  return embeddedShips;
 }
 
 function pickRandom(arr) {
