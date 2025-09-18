@@ -57,6 +57,10 @@ const embeddedShips = [
   { name: "Smolensk", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Smolensk B", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Napoli", tier: 10, nation: "Italy", class: "Cruiser" },
+  { name: "Ruggiero di Lauria", tier: 10, nation: "Italy", class: "Battleship" },
+  { name: "Sicilia", tier: 10, nation: "Italy", class: "Battleship" },
+  { name: "Wisconsin", tier: 10, nation: "USA", class: "Battleship" },
+  { name: "Rhode Island", tier: 10, nation: "USA", class: "Battleship" },
   { name: "Plymouth", tier: 10, nation: "UK", class: "Cruiser" },
   { name: "Gibraltar", tier: 10, nation: "UK", class: "Cruiser" },
   { name: "Colbert", tier: 10, nation: "France", class: "Cruiser" },
@@ -66,6 +70,8 @@ const embeddedShips = [
   { name: "Álvaro de Bazán", tier: 10, nation: "Spain", class: "Cruiser" },
   { name: "Attilio Regolo", tier: 10, nation: "Italy", class: "Cruiser" },
   { name: "Sevastopol", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Defence", tier: 10, nation: "UK", class: "Cruiser" },
+  { name: "Komissar", tier: 10, nation: "USSR", class: "Cruiser" },
 
   // === TIER XI CRUISERS (SUPERSHIPS) ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
