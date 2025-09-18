@@ -124,7 +124,8 @@ function displayShip(ship) {
   }
   if (ship.class && ship.class !== "Unknown") {
     const classIcon = getClassIcon(ship.class);
-    badges.push(`<span class="badge badge-class">${classIcon} ${ship.class}</span>`);
+    const classLower = ship.class.toLowerCase();
+    badges.push(`<span class="badge badge-class ${classLower}">${classIcon} ${ship.class}</span>`);
   }
   if (ship.nation && ship.nation !== "Unknown") {
     const flagIcon = getNationFlag(ship.nation);
