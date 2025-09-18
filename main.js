@@ -120,9 +120,9 @@ const embeddedShips = [
   { name: "Vampire II", tier: 10, nation: "Commonwealth", class: "Destroyer" },
   { name: "Tromp", tier: 10, nation: "Netherlands", class: "Destroyer" },
   { name: "Gdańsk", tier: 10, nation: "Europe", class: "Destroyer" },
+  { name: "Ragnar", tier: 10, nation: "Europe", class: "Destroyer" },
 
   // === TIER XI DESTROYERS ===
-  { name: "Ragnar", tier: 11, nation: "Europe", class: "Destroyer" },
   { name: "Yamagiri", tier: 11, nation: "Japan", class: "Destroyer" },
   { name: "Joshua Humphreys", tier: 11, nation: "USA", class: "Destroyer" },
   { name: "Dalarna", tier: 11, nation: "Europe", class: "Destroyer" },
