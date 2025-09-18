@@ -36,6 +36,10 @@ const embeddedShips = [
   { name: "Satsuma", tier: 11, nation: "Japan", class: "Battleship" },
   { name: "Incomparable", tier: 11, nation: "UK", class: "Battleship" },
   { name: "Hannover", tier: 11, nation: "Germany", class: "Battleship" },
+  { name: "Admiral Ushakov", tier: 11, nation: "USSR", class: "Battleship" },
+  { name: "Patrie", tier: 11, nation: "France", class: "Battleship" },
+  { name: "Piemonte", tier: 11, nation: "Italy", class: "Battleship" },
+  { name: "Maine", tier: 11, nation: "USA", class: "Battleship" },
   
   // === TIER X CRUISERS ===
   { name: "Zao", tier: 10, nation: "Japan", class: "Cruiser" },
@@ -73,11 +77,21 @@ const embeddedShips = [
   { name: "Sevastopol", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Defence", tier: 10, nation: "UK", class: "Cruiser" },
   { name: "Komissar", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Utrecht", tier: 10, nation: "Netherlands", class: "Cruiser" },
+  { name: "Cassard", tier: 10, nation: "France", class: "Cruiser" },
+  { name: "Castilla", tier: 10, nation: "Spain", class: "Cruiser" },
+  { name: "San Martín", tier: 10, nation: "Pan-America", class: "Cruiser" },
+  { name: "Libertad", tier: 10, nation: "Pan-America", class: "Cruiser" },
 
   // === TIER XI CRUISERS (SUPERSHIPS) ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
+  { name: "Jacksonville", tier: 11, nation: "USA", class: "Cruiser" },
   { name: "Marseille", tier: 11, nation: "France", class: "Cruiser" },
   { name: "Conde", tier: 11, nation: "France", class: "Cruiser" },
+  { name: "Edgar", tier: 11, nation: "UK", class: "Cruiser" },
+  { name: "Clausewitz", tier: 11, nation: "Germany", class: "Cruiser" },
+  { name: "Novosibirsk", tier: 11, nation: "USSR", class: "Cruiser" },
+  { name: "Kunming", tier: 11, nation: "Pan-Asia", class: "Cruiser" },
   
   // === TIER X DESTROYERS ===
   { name: "Shimakaze", tier: 10, nation: "Japan", class: "Destroyer" },
@@ -102,10 +116,15 @@ const embeddedShips = [
   { name: "Yueyang", tier: 10, nation: "Pan-Asia", class: "Destroyer" },
   { name: "Vampire II", tier: 10, nation: "Commonwealth", class: "Destroyer" },
   { name: "Tromp", tier: 10, nation: "Netherlands", class: "Destroyer" },
+  { name: "Cerberus", tier: 10, nation: "Commonwealth", class: "Destroyer" },
+  { name: "Gdańsk", tier: 10, nation: "Europe", class: "Destroyer" },
   { name: "Ragnar", tier: 11, nation: "Europe", class: "Destroyer" },
-  
+
   // === TIER XI DESTROYERS ===
   { name: "Yamagiri", tier: 11, nation: "Japan", class: "Destroyer" },
+  { name: "Joshua Humphreys", tier: 11, nation: "USA", class: "Destroyer" },
+  { name: "Dalarna", tier: 11, nation: "Europe", class: "Destroyer" },
+  { name: "Zorkiy", tier: 11, nation: "USSR", class: "Destroyer" },
   
   // === TIER X CARRIERS ===
   { name: "Hakuryū", tier: 10, nation: "Japan", class: "Carrier" },
@@ -116,11 +135,14 @@ const embeddedShips = [
   { name: "Audacious", tier: 10, nation: "UK", class: "Carrier" },
   { name: "Malta", tier: 10, nation: "UK", class: "Carrier" },
   { name: "Nakhimov", tier: 10, nation: "USSR", class: "Carrier" },
+  { name: "Essex", tier: 10, nation: "USA", class: "Carrier" },
   
   // === TIER XI CARRIERS ===
   { name: "Max Immelmann", tier: 11, nation: "Germany", class: "Carrier" },
   { name: "Eagle", tier: 11, nation: "UK", class: "Carrier" },
   { name: "United States", tier: 11, nation: "USA", class: "Carrier" },
+  { name: "Sekiryu", tier: 11, nation: "Japan", class: "Carrier" },
+  { name: "Devastation", tier: 11, nation: "UK", class: "Carrier" },
   
   // === TIER X SUBMARINES ===
   { name: "Balao", tier: 10, nation: "USA", class: "Submarine" },
@@ -128,6 +150,9 @@ const embeddedShips = [
   { name: "U-2501", tier: 10, nation: "Germany", class: "Submarine" },
   { name: "I-56", tier: 10, nation: "Japan", class: "Submarine" },
   { name: "Thrasher", tier: 10, nation: "UK", class: "Submarine" },
+  { name: "K-1", tier: 10, nation: "USSR", class: "Submarine" },
+  { name: "Bungo", tier: 10, nation: "Japan", class: "Submarine" },
+  { name: "Burrows", tier: 10, nation: "USA", class: "Submarine" },
 ];
 
 async function loadShips() {
