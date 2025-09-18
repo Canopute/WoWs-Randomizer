@@ -24,13 +24,13 @@ const embeddedShips = [
   { name: "Cristoforo Colombo", tier: 10, nation: "Italy", class: "Battleship" },
   { name: "Pommern", tier: 10, nation: "Germany", class: "Battleship" },
   { name: "Mecklenburg", tier: 10, nation: "Germany", class: "Battleship" },
+  { name: "Vermont", tier: 10, nation: "USA", class: "Battleship" },
+  { name: "Preußen", tier: 10, nation: "Germany", class: "Battleship" },
+  { name: "Louisiana", tier: 10, nation: "USA", class: "Battleship" },
+  { name: "Schlieffen", tier: 10, nation: "Germany", class: "Battleship" },
   
-  // === TIER XI BATTLESHIPS ===
+  // === TIER XI BATTLESHIPS (SUPERSHIPS) ===
   { name: "Satsuma", tier: 11, nation: "Japan", class: "Battleship" },
-  { name: "Vermont", tier: 11, nation: "USA", class: "Battleship" },
-  { name: "Louisiana", tier: 11, nation: "USA", class: "Battleship" },
-  { name: "Preußen", tier: 11, nation: "Germany", class: "Battleship" },
-  { name: "Schlieffen", tier: 11, nation: "Germany", class: "Battleship" },
   { name: "Incomparable", tier: 11, nation: "UK", class: "Battleship" },
   { name: "Hannover", tier: 11, nation: "Germany", class: "Battleship" },
   
@@ -50,10 +50,10 @@ const embeddedShips = [
   { name: "Puerto Rico", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Stalingrad", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Napoli", tier: 10, nation: "Italy", class: "Cruiser" },
-  
-  // === TIER XI CRUISERS ===
+  { name: "Plymouth", tier: 10, nation: "UK", class: "Cruiser" },
+
+  // === TIER XI CRUISERS (SUPERSHIPS) ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
-  { name: "Plymouth", tier: 11, nation: "UK", class: "Cruiser" },
   { name: "Marseille", tier: 11, nation: "France", class: "Cruiser" },
   { name: "Conde", tier: 11, nation: "France", class: "Cruiser" },
   
