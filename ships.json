@@ -78,6 +78,30 @@
     "class": "Battleship"
   },
   {
+    "name": "Kearsarge",
+    "tier": 10,
+    "nation": "USA",
+    "class": "Battleship"
+  },
+  {
+    "name": "Georgia",
+    "tier": 10,
+    "nation": "USA",
+    "class": "Battleship"
+  },
+  {
+    "name": "Pommern",
+    "tier": 10,
+    "nation": "Germany",
+    "class": "Battleship"
+  },
+  {
+    "name": "Mecklenburg",
+    "tier": 10,
+    "nation": "Germany",
+    "class": "Battleship"
+  },
+  {
     "name": "Satsuma",
     "tier": 11,
     "nation": "Japan",
@@ -85,6 +109,12 @@
   },
   {
     "name": "Vermont",
+    "tier": 11,
+    "nation": "USA",
+    "class": "Battleship"
+  },
+  {
+    "name": "Louisiana",
     "tier": 11,
     "nation": "USA",
     "class": "Battleship"
@@ -181,6 +211,24 @@
   },
   {
     "name": "Venezia",
+    "tier": 10,
+    "nation": "Italy",
+    "class": "Cruiser"
+  },
+  {
+    "name": "Puerto Rico",
+    "tier": 10,
+    "nation": "USA",
+    "class": "Cruiser"
+  },
+  {
+    "name": "Stalingrad",
+    "tier": 10,
+    "nation": "USSR",
+    "class": "Cruiser"
+  },
+  {
+    "name": "Napoli",
     "tier": 10,
     "nation": "Italy",
     "class": "Cruiser"
@@ -315,6 +363,12 @@
     "name": "Yueyang",
     "tier": 10,
     "nation": "Pan-Asia",
+    "class": "Destroyer"
+  },
+  {
+    "name": "Vampire II",
+    "tier": 10,
+    "nation": "Commonwealth",
     "class": "Destroyer"
   },
   {

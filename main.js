@@ -23,10 +23,15 @@ const embeddedShips = [
   { name: "Slava", tier: 10, nation: "USSR", class: "Battleship" },
   { name: "Cristoforo Colombo", tier: 10, nation: "Italy", class: "Battleship" },
   { name: "Lepanto", tier: 10, nation: "Italy", class: "Battleship" },
+  { name: "Kearsarge", tier: 10, nation: "USA", class: "Battleship" },
+  { name: "Georgia", tier: 10, nation: "USA", class: "Battleship" },
+  { name: "Pommern", tier: 10, nation: "Germany", class: "Battleship" },
+  { name: "Mecklenburg", tier: 10, nation: "Germany", class: "Battleship" },
   
   // === TIER XI BATTLESHIPS ===
   { name: "Satsuma", tier: 11, nation: "Japan", class: "Battleship" },
   { name: "Vermont", tier: 11, nation: "USA", class: "Battleship" },
+  { name: "Louisiana", tier: 11, nation: "USA", class: "Battleship" },
   { name: "Preußen", tier: 11, nation: "Germany", class: "Battleship" },
   { name: "Schlieffen", tier: 11, nation: "Germany", class: "Battleship" },
   { name: "Incomparable", tier: 11, nation: "UK", class: "Battleship" },
@@ -45,6 +50,9 @@ const embeddedShips = [
   { name: "Petropavlovsk", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Nevsky", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Venezia", tier: 10, nation: "Italy", class: "Cruiser" },
+  { name: "Puerto Rico", tier: 10, nation: "USA", class: "Cruiser" },
+  { name: "Stalingrad", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Napoli", tier: 10, nation: "Italy", class: "Cruiser" },
   
   // === TIER XI CRUISERS ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
@@ -71,6 +79,7 @@ const embeddedShips = [
   { name: "Halland", tier: 10, nation: "Europe", class: "Destroyer" },
   { name: "Småland", tier: 10, nation: "Europe", class: "Destroyer" },
   { name: "Yueyang", tier: 10, nation: "Pan-Asia", class: "Destroyer" },
+  { name: "Vampire II", tier: 10, nation: "Commonwealth", class: "Destroyer" },
   { name: "Ragnar", tier: 11, nation: "Europe", class: "Destroyer" },
   
   // === TIER XI DESTROYERS ===
