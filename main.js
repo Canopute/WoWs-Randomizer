@@ -33,16 +33,18 @@ const embeddedShips = [
   { name: "BA Montana", tier: 10, nation: "USA", class: "Battleship" },
   { name: "Bungo", tier: 10, nation: "Japan", class: "Battleship" },
   { name: "Libertad", tier: 10, nation: "Pan-America", class: "Battleship" },
+  { name: "Incomparable", tier: 10, nation: "UK", class: "Battleship" },
+  { name: "Irresistible", tier: 10, nation: "Europe", class: "Battleship" },
   
   // === TIER XI BATTLESHIPS (SUPERSHIPS) ===
   { name: "Satsuma", tier: 11, nation: "Japan", class: "Battleship" },
-  { name: "Incomparable", tier: 11, nation: "UK", class: "Battleship" },
   { name: "Hannover", tier: 11, nation: "Germany", class: "Battleship" },
   { name: "Admiral Ushakov", tier: 11, nation: "USSR", class: "Battleship" },
   { name: "Patrie", tier: 11, nation: "France", class: "Battleship" },
   { name: "Piemonte", tier: 11, nation: "Italy", class: "Battleship" },
   { name: "Maine", tier: 11, nation: "USA", class: "Battleship" },
-  
+  { name: "Devastation", tier: 11, nation: "UK", class: "Battleship" },
+
   // === TIER X CRUISERS ===
   { name: "Zao", tier: 10, nation: "Japan", class: "Cruiser" },
   { name: "Yoshino", tier: 10, nation: "Japan", class: "Cruiser" },
@@ -86,6 +88,8 @@ const embeddedShips = [
   { name: "San Martín", tier: 10, nation: "Pan-America", class: "Cruiser" },
   { name: "Marseille", tier: 10, nation: "France", class: "Cruiser" },
   { name: "Cerberus", tier: 10, nation: "Commonwealth", class: "Cruiser" },
+  { name: "Brennus", tier: 10, nation: "France", class: "Cruiser" },
+  { name: "Amiral Lartigue", tier: 10, nation: "France", class: "Cruiser" },
 
   // === TIER XI CRUISERS (SUPERSHIPS) ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
@@ -121,6 +125,7 @@ const embeddedShips = [
   { name: "Tromp", tier: 10, nation: "Netherlands", class: "Destroyer" },
   { name: "Gdańsk", tier: 10, nation: "Europe", class: "Destroyer" },
   { name: "Ragnar", tier: 10, nation: "Europe", class: "Destroyer" },
+  { name: "Hull", tier: 10, nation: "USA", class: "Destroyer" },
 
   // === TIER XI DESTROYERS ===
   { name: "Yamagiri", tier: 11, nation: "Japan", class: "Destroyer" },
@@ -144,7 +149,6 @@ const embeddedShips = [
   { name: "Eagle", tier: 11, nation: "UK", class: "Carrier" },
   { name: "United States", tier: 11, nation: "USA", class: "Carrier" },
   { name: "Sekiryu", tier: 11, nation: "Japan", class: "Carrier" },
-  { name: "Devastation", tier: 11, nation: "UK", class: "Carrier" },
   
   // === TIER X SUBMARINES ===
   { name: "Balao", tier: 10, nation: "USA", class: "Submarine" },
