@@ -12,6 +12,7 @@ const embeddedShips = [
   // === TIER X BATTLESHIPS ===
   { name: "Yamato", tier: 10, nation: "Japan", class: "Battleship" },
   { name: "Shikishima", tier: 10, nation: "Japan", class: "Battleship" },
+  { name: "ARP Yamato", tier: 10, nation: "Japan", class: "Battleship" },
   { name: "Montana", tier: 10, nation: "USA", class: "Battleship" },
   { name: "Ohio", tier: 10, nation: "USA", class: "Battleship" },
   { name: "Großer Kurfürst", tier: 10, nation: "Germany", class: "Battleship" },
@@ -38,6 +39,7 @@ const embeddedShips = [
   // === TIER X CRUISERS ===
   { name: "Zao", tier: 10, nation: "Japan", class: "Cruiser" },
   { name: "Yoshino", tier: 10, nation: "Japan", class: "Cruiser" },
+  { name: "Yoshino B", tier: 10, nation: "Japan", class: "Cruiser" },
   { name: "Des Moines", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Salem", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Hindenburg", tier: 10, nation: "Germany", class: "Cruiser" },
@@ -53,11 +55,17 @@ const embeddedShips = [
   { name: "Austin", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Stalingrad", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Smolensk", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Smolensk B", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Napoli", tier: 10, nation: "Italy", class: "Cruiser" },
   { name: "Plymouth", tier: 10, nation: "UK", class: "Cruiser" },
   { name: "Gibraltar", tier: 10, nation: "UK", class: "Cruiser" },
   { name: "Colbert", tier: 10, nation: "France", class: "Cruiser" },
   { name: "Yodo", tier: 10, nation: "Japan", class: "Cruiser" },
+  { name: "Gouden Leeuw", tier: 10, nation: "Netherlands", class: "Cruiser" },
+  { name: "Jinan", tier: 10, nation: "Pan-Asia", class: "Cruiser" },
+  { name: "Álvaro de Bazán", tier: 10, nation: "Spain", class: "Cruiser" },
+  { name: "Attilio Regolo", tier: 10, nation: "Italy", class: "Cruiser" },
+  { name: "Sevastopol", tier: 10, nation: "USSR", class: "Cruiser" },
 
   // === TIER XI CRUISERS (SUPERSHIPS) ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
@@ -86,6 +94,7 @@ const embeddedShips = [
   { name: "Småland", tier: 10, nation: "Europe", class: "Destroyer" },
   { name: "Yueyang", tier: 10, nation: "Pan-Asia", class: "Destroyer" },
   { name: "Vampire II", tier: 10, nation: "Commonwealth", class: "Destroyer" },
+  { name: "Tromp", tier: 10, nation: "Netherlands", class: "Destroyer" },
   { name: "Ragnar", tier: 11, nation: "Europe", class: "Destroyer" },
   
   // === TIER XI DESTROYERS ===
@@ -93,6 +102,7 @@ const embeddedShips = [
   
   // === TIER X CARRIERS ===
   { name: "Hakuryū", tier: 10, nation: "Japan", class: "Carrier" },
+  { name: "Shinano", tier: 10, nation: "Japan", class: "Carrier" },
   { name: "Midway", tier: 10, nation: "USA", class: "Carrier" },
   { name: "Franklin D. Roosevelt", tier: 10, nation: "USA", class: "Carrier" },
   { name: "Manfred von Richthofen", tier: 10, nation: "Germany", class: "Carrier" },
