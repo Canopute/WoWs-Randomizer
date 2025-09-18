@@ -72,12 +72,6 @@
     "class": "Battleship"
   },
   {
-    "name": "Lepanto",
-    "tier": 10,
-    "nation": "Italy",
-    "class": "Battleship"
-  },
-  {
     "name": "Pommern",
     "tier": 10,
     "nation": "Germany",
