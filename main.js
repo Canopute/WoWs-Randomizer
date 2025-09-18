@@ -30,6 +30,7 @@ const embeddedShips = [
   { name: "Preußen", tier: 10, nation: "Germany", class: "Battleship" },
   { name: "Louisiana", tier: 10, nation: "USA", class: "Battleship" },
   { name: "Schlieffen", tier: 10, nation: "Germany", class: "Battleship" },
+  { name: "BA Montana", tier: 10, nation: "USA", class: "Battleship" },
   
   // === TIER XI BATTLESHIPS (SUPERSHIPS) ===
   { name: "Satsuma", tier: 11, nation: "Japan", class: "Battleship" },
@@ -48,7 +49,7 @@ const embeddedShips = [
   { name: "Henri IV", tier: 10, nation: "France", class: "Cruiser" },
   { name: "Moskva", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Petropavlovsk", tier: 10, nation: "USSR", class: "Cruiser" },
-  { name: "Nevsky", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Alexander Nevsky", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Venezia", tier: 10, nation: "Italy", class: "Cruiser" },
   { name: "Puerto Rico", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Worcester", tier: 10, nation: "USA", class: "Cruiser" },
