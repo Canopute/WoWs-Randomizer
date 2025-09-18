@@ -23,8 +23,6 @@ const embeddedShips = [
   { name: "Slava", tier: 10, nation: "USSR", class: "Battleship" },
   { name: "Cristoforo Colombo", tier: 10, nation: "Italy", class: "Battleship" },
   { name: "Lepanto", tier: 10, nation: "Italy", class: "Battleship" },
-  { name: "Kearsarge", tier: 10, nation: "USA", class: "Battleship" },
-  { name: "Georgia", tier: 10, nation: "USA", class: "Battleship" },
   { name: "Pommern", tier: 10, nation: "Germany", class: "Battleship" },
   { name: "Mecklenburg", tier: 10, nation: "Germany", class: "Battleship" },
   
