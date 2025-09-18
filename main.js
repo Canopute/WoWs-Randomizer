@@ -153,7 +153,8 @@ const embeddedShips = [
   { name: "Thrasher", tier: 10, nation: "UK", class: "Submarine" },
   { name: "K-1", tier: 10, nation: "USSR", class: "Submarine" },
   { name: "Bungo", tier: 10, nation: "Japan", class: "Submarine" },
-  { name: "Burrows", tier: 10, nation: "USA", class: "Submarine" },
+  { name: "Gato", tier: 10, nation: "USA", class: "Submarine" },
+  { name: "Archerfish", tier: 10, nation: "USA", class: "Submarine" },
 ];
 
 async function loadShips() {
