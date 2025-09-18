@@ -120,9 +120,9 @@ const embeddedShips = [
   { name: "Vampire II", tier: 10, nation: "Commonwealth", class: "Destroyer" },
   { name: "Tromp", tier: 10, nation: "Netherlands", class: "Destroyer" },
   { name: "Gdańsk", tier: 10, nation: "Europe", class: "Destroyer" },
-  { name: "Ragnar", tier: 11, nation: "Europe", class: "Destroyer" },
 
   // === TIER XI DESTROYERS ===
+  { name: "Ragnar", tier: 11, nation: "Europe", class: "Destroyer" },
   { name: "Yamagiri", tier: 11, nation: "Japan", class: "Destroyer" },
   { name: "Joshua Humphreys", tier: 11, nation: "USA", class: "Destroyer" },
   { name: "Dalarna", tier: 11, nation: "Europe", class: "Destroyer" },
@@ -342,6 +342,15 @@ function restoreShip(shipName) {
   let lastPickedName = null;
   randomizeBtn.addEventListener("click", () => {
     const filtered = filterShips();
+    
+    // Debug: Log Tier XI ships for troubleshooting
+    const tier11Ships = ships.filter(s => s.tier === 11);
+    const tier11Filtered = filtered.filter(s => s.tier === 11);
+    console.log(`Total T11 ships: ${tier11Ships.length}, Filtered T11 ships: ${tier11Filtered.length}`);
+    if (tier11Filtered.length > 0) {
+      console.log('Available T11 ships:', tier11Filtered.map(s => s.name));
+    }
+    
     if (filtered.length === 0) {
       displayShip(null);
       return;
