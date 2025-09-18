@@ -1,6 +1,7 @@
 # WoWS Tier X/XI Randomizer
 
 A tiny, no-install web app to randomly pick a World of Warships Tier X or Supership (Tier XI).
+https://canopute.github.io/WoWs-Randomizer/
 
 ## How to use
 
