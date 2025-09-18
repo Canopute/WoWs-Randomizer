@@ -17,6 +17,7 @@ const embeddedShips = [
   { name: "Großer Kurfürst", tier: 10, nation: "Germany", class: "Battleship" },
   { name: "Conqueror", tier: 10, nation: "UK", class: "Battleship" },
   { name: "Thunderer", tier: 10, nation: "UK", class: "Battleship" },
+  { name: "St. Vincent", tier: 10, nation: "UK", class: "Battleship" },
   { name: "République", tier: 10, nation: "France", class: "Battleship" },
   { name: "Bourgogne", tier: 10, nation: "France", class: "Battleship" },
   { name: "Kremlin", tier: 10, nation: "USSR", class: "Battleship" },
@@ -48,9 +49,15 @@ const embeddedShips = [
   { name: "Nevsky", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Venezia", tier: 10, nation: "Italy", class: "Cruiser" },
   { name: "Puerto Rico", tier: 10, nation: "USA", class: "Cruiser" },
+  { name: "Worcester", tier: 10, nation: "USA", class: "Cruiser" },
+  { name: "Austin", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Stalingrad", tier: 10, nation: "USSR", class: "Cruiser" },
+  { name: "Smolensk", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Napoli", tier: 10, nation: "Italy", class: "Cruiser" },
   { name: "Plymouth", tier: 10, nation: "UK", class: "Cruiser" },
+  { name: "Gibraltar", tier: 10, nation: "UK", class: "Cruiser" },
+  { name: "Colbert", tier: 10, nation: "France", class: "Cruiser" },
+  { name: "Yodo", tier: 10, nation: "Japan", class: "Cruiser" },
 
   // === TIER XI CRUISERS (SUPERSHIPS) ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
@@ -66,12 +73,14 @@ const embeddedShips = [
   { name: "Somers", tier: 10, nation: "USA", class: "Destroyer" },
   { name: "Z-52", tier: 10, nation: "Germany", class: "Destroyer" },
   { name: "Elbing", tier: 10, nation: "Germany", class: "Destroyer" },
+  { name: "Z-42", tier: 10, nation: "Germany", class: "Destroyer" },
   { name: "Daring", tier: 10, nation: "UK", class: "Destroyer" },
   { name: "Druid", tier: 10, nation: "UK", class: "Destroyer" },
   { name: "Kléber", tier: 10, nation: "France", class: "Destroyer" },
   { name: "Marceau", tier: 10, nation: "France", class: "Destroyer" },
   { name: "Grozovoi", tier: 10, nation: "USSR", class: "Destroyer" },
   { name: "Khabarovsk", tier: 10, nation: "USSR", class: "Destroyer" },
+  { name: "Delny", tier: 10, nation: "USSR", class: "Destroyer" },
   { name: "Paolo Emilio", tier: 10, nation: "Italy", class: "Destroyer" },
   { name: "Halland", tier: 10, nation: "Europe", class: "Destroyer" },
   { name: "Småland", tier: 10, nation: "Europe", class: "Destroyer" },
@@ -88,6 +97,7 @@ const embeddedShips = [
   { name: "Franklin D. Roosevelt", tier: 10, nation: "USA", class: "Carrier" },
   { name: "Manfred von Richthofen", tier: 10, nation: "Germany", class: "Carrier" },
   { name: "Audacious", tier: 10, nation: "UK", class: "Carrier" },
+  { name: "Malta", tier: 10, nation: "UK", class: "Carrier" },
   { name: "Nakhimov", tier: 10, nation: "USSR", class: "Carrier" },
   
   // === TIER XI CARRIERS ===
@@ -98,7 +108,9 @@ const embeddedShips = [
   // === TIER X SUBMARINES ===
   { name: "Balao", tier: 10, nation: "USA", class: "Submarine" },
   { name: "U-4501", tier: 10, nation: "Germany", class: "Submarine" },
+  { name: "U-2501", tier: 10, nation: "Germany", class: "Submarine" },
   { name: "I-56", tier: 10, nation: "Japan", class: "Submarine" },
+  { name: "Thrasher", tier: 10, nation: "UK", class: "Submarine" },
 ];
 
 async function loadShips() {
