@@ -45,7 +45,6 @@ const embeddedShips = [
   { name: "Petropavlovsk", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Nevsky", tier: 10, nation: "USSR", class: "Cruiser" },
   { name: "Venezia", tier: 10, nation: "Italy", class: "Cruiser" },
-  { name: "Brindisi", tier: 10, nation: "Italy", class: "Cruiser" },
   
   // === TIER XI CRUISERS ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
