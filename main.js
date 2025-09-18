@@ -48,6 +48,7 @@ const embeddedShips = [
   { name: "Des Moines", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Salem", tier: 10, nation: "USA", class: "Cruiser" },
   { name: "Hindenburg", tier: 10, nation: "Germany", class: "Cruiser" },
+  { name: "Prinz Adalbert", tier: 10, nation: "Germany", class: "Cruiser" },
   { name: "Minotaur", tier: 10, nation: "UK", class: "Cruiser" },
   { name: "Goliath", tier: 10, nation: "UK", class: "Cruiser" },
   { name: "Henri IV", tier: 10, nation: "France", class: "Cruiser" },
@@ -82,11 +83,12 @@ const embeddedShips = [
   { name: "Castilla", tier: 10, nation: "Spain", class: "Cruiser" },
   { name: "San Martín", tier: 10, nation: "Pan-America", class: "Cruiser" },
   { name: "Libertad", tier: 10, nation: "Pan-America", class: "Cruiser" },
+  { name: "Marseille", tier: 10, nation: "France", class: "Cruiser" },
+  { name: "Cerberus", tier: 10, nation: "Commonwealth", class: "Cruiser" },
 
   // === TIER XI CRUISERS (SUPERSHIPS) ===
   { name: "Annapolis", tier: 11, nation: "USA", class: "Cruiser" },
   { name: "Jacksonville", tier: 11, nation: "USA", class: "Cruiser" },
-  { name: "Marseille", tier: 11, nation: "France", class: "Cruiser" },
   { name: "Conde", tier: 11, nation: "France", class: "Cruiser" },
   { name: "Edgar", tier: 11, nation: "UK", class: "Cruiser" },
   { name: "Clausewitz", tier: 11, nation: "Germany", class: "Cruiser" },
@@ -116,7 +118,6 @@ const embeddedShips = [
   { name: "Yueyang", tier: 10, nation: "Pan-Asia", class: "Destroyer" },
   { name: "Vampire II", tier: 10, nation: "Commonwealth", class: "Destroyer" },
   { name: "Tromp", tier: 10, nation: "Netherlands", class: "Destroyer" },
-  { name: "Cerberus", tier: 10, nation: "Commonwealth", class: "Destroyer" },
   { name: "Gdańsk", tier: 10, nation: "Europe", class: "Destroyer" },
   { name: "Ragnar", tier: 11, nation: "Europe", class: "Destroyer" },
 
