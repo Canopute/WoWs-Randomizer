@@ -4,8 +4,7 @@ A tiny, no-install web app to randomly pick a World of Warships Tier X or Supers
 
 ## How to use
 
-- Open `C:\Users\axeli\CascadeProjects\wows-randomizer\index.html` in your browser.
-- Click **Randomize**. It will pick from Tier X and XI by default. Uncheck any tier you want to exclude.
+- Click **Battle Station**. It will pick from Tier X and XI by default. Uncheck any tier you want to exclude.
 - The app works offline and directly from the file system (no server needed) using an embedded sample dataset.
 
 ## Editing or expanding the ship list
