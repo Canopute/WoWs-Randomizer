@@ -91,25 +91,25 @@
   },
   {
     "name": "Vermont",
-    "tier": 11,
+    "tier": 10,
     "nation": "USA",
     "class": "Battleship"
   },
   {
     "name": "Louisiana",
-    "tier": 11,
+    "tier": 10,
     "nation": "USA",
     "class": "Battleship"
   },
   {
     "name": "Preußen",
-    "tier": 11,
+    "tier": 10,
     "nation": "Germany",
     "class": "Battleship"
   },
   {
     "name": "Schlieffen",
-    "tier": 11,
+    "tier": 10,
     "nation": "Germany",
     "class": "Battleship"
   },
@@ -223,7 +223,7 @@
   },
   {
     "name": "Plymouth",
-    "tier": 11,
+    "tier": 10,
     "nation": "UK",
     "class": "Cruiser"
   },
