@@ -31,6 +31,7 @@ const embeddedShips = [
   { name: "Louisiana", tier: 10, nation: "USA", class: "Battleship" },
   { name: "Schlieffen", tier: 10, nation: "Germany", class: "Battleship" },
   { name: "BA Montana", tier: 10, nation: "USA", class: "Battleship" },
+  { name: "Bungo", tier: 10, nation: "Japan", class: "Battleship" },
   
   // === TIER XI BATTLESHIPS (SUPERSHIPS) ===
   { name: "Satsuma", tier: 11, nation: "Japan", class: "Battleship" },
@@ -152,7 +153,6 @@ const embeddedShips = [
   { name: "I-56", tier: 10, nation: "Japan", class: "Submarine" },
   { name: "Thrasher", tier: 10, nation: "UK", class: "Submarine" },
   { name: "K-1", tier: 10, nation: "USSR", class: "Submarine" },
-  { name: "Bungo", tier: 10, nation: "Japan", class: "Submarine" },
   { name: "Gato", tier: 10, nation: "USA", class: "Submarine" },
   { name: "Archerfish", tier: 10, nation: "USA", class: "Submarine" },
 ];
