@@ -1,0 +1,48 @@
+{
+  "name": "wows-randomizer",
+  "version": "1.0.0",
+  "description": "World of Warships Tier X/XI randomizer - desktop (Electron)",
+  "main": "electron-main.js",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win portable",
+    "embed": "node scripts/build-embed.js"
+  },
+  "devDependencies": {
+    "electron": "29.3.0",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "net.windsurf.wowsrandomizer",
+    "productName": "WoWS Randomizer",
+    "files": [
+      "index.html",
+      "styles.css",
+      "main.js",
+      "main.data.js",
+      "ships.json",
+      "electron-main.js",
+      "preload.js",
+      "README.md",
+      "assets/**"
+    ],
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2"
+  }
+}
