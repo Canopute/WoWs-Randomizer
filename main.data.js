@@ -560,6 +560,12 @@ window.EMBEDDED_SHIPS = [
     "class": "Destroyer"
   },
   {
+    "name": "Georg Hoffmann",
+    "tier": 10,
+    "nation": "Germany",
+    "class": "Destroyer"
+  },
+  {
     "name": "Z-52",
     "tier": 10,
     "nation": "Germany",
