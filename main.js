@@ -301,7 +301,6 @@ function restoreShip(shipName) {
   const noRepeat = document.getElementById("noRepeat");
   const classFiltersRoot = document.getElementById("classFilters");
   const nationFiltersRoot = document.getElementById("nationFilters");
-  const enrichBtn = document.getElementById("enrichBtn");
   const copyBtn = document.getElementById("copyBtn");
   const excludeBtn = document.getElementById("excludeBtn");
 
@@ -409,21 +408,15 @@ function restoreShip(shipName) {
     });
   }
 
-  // View 3D Model button
+  // View Wiki button
   const view3DBtn = document.getElementById("view3DBtn");
   if (view3DBtn) {
     view3DBtn.addEventListener("click", () => {
       if (!lastPickedName) return;
-      // Try multiple 3D model sources
+      // Open ship Wiki page
       const shipName = lastPickedName.replace(/\s+/g, '_');
-      const urls = [
-        `https://wiki.wargaming.net/en/Ship:${encodeURIComponent(shipName)}`,
-        `https://www.wowsft.com/ship?index=${encodeURIComponent(lastPickedName)}`,
-        `https://gamemodels3d.com/worldofwarships/ships/${encodeURIComponent(shipName.toLowerCase())}`
-      ];
-      
-      // Open the first available URL
-      window.open(urls[0], '_blank');
+      const wikiUrl = `https://wiki.wargaming.net/en/Ship:${encodeURIComponent(shipName)}`;
+      window.open(wikiUrl, '_blank');
     });
   }
 
@@ -445,30 +438,8 @@ function restoreShip(shipName) {
   // Initialize excluded ships display
   updateExcludedShipsList(excluded);
 
-  if (enrichBtn) {
-    enrichBtn.addEventListener("click", async () => {
-      enrichBtn.disabled = true;
-      const originalText = enrichBtn.textContent;
-      try {
-        const updated = await enrichMetadata(ships, metaCache, (done, total, currentName) => {
-          enrichBtn.textContent = `Enriching ${done}/${total}… ${currentName || ""}`;
-        });
-        saveCache(cacheKey, updated);
-        // Re-render by just picking again (filters will now show enriched badges)
-        enrichBtn.textContent = "Enriched ✓";
-      } catch (e) {
-        console.warn(e);
-        alert("Enrichment failed or was blocked by the browser (CORS). Try serving over HTTP.");
-        enrichBtn.textContent = originalText;
-      } finally {
-        setTimeout(() => {
-          enrichBtn.disabled = false;
-          enrichBtn.textContent = originalText;
-        }, 1500);
-      }
-    });
-  }
 })();
+
 
 function updateExcludeButton(btn, excluded, shipName) {
   if (!btn || !shipName) return;
