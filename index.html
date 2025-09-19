@@ -3,70 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WoWS Tier X/XI Randomizer</title>
+  <title>WoWS Naval Randomizer - Beautiful Ship Selector</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <main class="app">
-    <header class="header">
-      <h1>World of Warships - Tier X/XI Randomizer</h1>
-      <p class="subtitle">Click the button to get a random Tier X or Supership (XI).</p>
-    </header>
+    <div class="top-support">
+      <div id="kofi-widget-container-top"></div>
+    </div>
+    
+    <div class="main-content">
+      <header class="header">
+        <h1>⚓ WORLD OF WARSHIPS ⚓</h1>
+        <p class="subtitle">RANDOMIZE YOUR FLEET</p>
+      </header>
+      
+      <div class="center-content">
+        <section class="controls">
+          <div class="control-section">
+            <h3>Battle Tiers</h3>
+            <div class="control-group">
+              <label class="checkbox">
+                <input type="checkbox" id="tier10" checked />
+                <span>Tier X - Elite Vessels</span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" id="tier11" checked />
+                <span>Tier XI - Superships</span>
+              </label>
+            </div>
+          </div>
 
-    <section class="controls">
-      <div class="control-group">
-        <span class="label">Tiers</span>
-        <label class="checkbox">
-          <input type="checkbox" id="tier10" checked />
-          <span>Tier X</span>
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" id="tier11" checked />
-          <span>Tier XI (Superships)</span>
-        </label>
+          <div class="control-section" id="classFilterGroup">
+            <h3>Ship Classes</h3>
+            <div class="control-group" id="classFilters"></div>
+          </div>
+
+          <div class="control-section" id="nationFilterGroup">
+            <h3>Naval Nations</h3>
+            <div class="control-group" id="nationFilters"></div>
+          </div>
+
+          <div class="control-section">
+            <h3>Battle Options</h3>
+            <div class="control-group">
+              <label class="checkbox" title="Avoid picking the same ship twice in a row">
+                <input type="checkbox" id="noRepeat" checked />
+                <span>No immediate repeats</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="randomize-section">
+            <button id="randomizeBtn" class="btn-primary">
+              ⚔️ BATTLE STATIONS
+            </button>
+          </div>
+        </section>
+        
+        <section id="result" class="result hidden">
+          <div class="ship-display">
+            <div class="ship-info">
+              <div class="ship-name" id="shipName">—</div>
+              <div class="ship-meta" id="shipMeta"></div>
+              
+              <div class="actions">
+                <button id="copyBtn" class="btn-secondary" title="Copy ship name to clipboard">
+                  📋 Copy Name
+                </button>
+                <button id="excludeBtn" class="btn-danger" title="Exclude this ship from future rolls">
+                  🚫 Exclude Ship
+                </button>
+                <button id="view3DBtn" class="btn-secondary" title="View ship on Wiki (opens external link)">
+                  📖 Wiki
+                </button>
+              </div>
+              
+              <div class="tips">
+                ⌨️ Press <strong>Spacebar</strong> to randomize • 💾 Exclusions are saved locally
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <div class="control-group" id="classFilterGroup">
-        <span class="label">Class</span>
-        <div id="classFilters"></div>
-      </div>
 
-      <div class="control-group" id="nationFilterGroup">
-        <span class="label">Nation</span>
-        <div id="nationFilters"></div>
-      </div>
-
-      <label class="checkbox" title="Avoid picking the same ship twice in a row">
-        <input type="checkbox" id="noRepeat" checked />
-        <span>No immediate repeats</span>
-      </label>
-
-      <button id="enrichBtn" class="btn-primary" title="Fetch Nation/Class from the WoWS wiki and cache locally">Enrich metadata (online)</button>
-      <button id="randomizeBtn" class="btn-primary">Randomize</button>
-    </section>
-
-    <section id="result" class="result hidden">
-      <div class="card">
-        <div class="ship-name" id="shipName">—</div>
-        <div class="ship-meta" id="shipMeta">—</div>
-        <div class="actions">
-          <button id="copyBtn" class="btn-secondary" title="Copy ship name to clipboard">Copy name</button>
-          <button id="excludeBtn" class="btn-secondary" title="Exclude this ship from future rolls">Exclude this ship</button>
+    <section class="excluded-ships-bottom">
+      <h3>Excluded Ships</h3>
+      <div class="excluded-list" id="excludedList">
+        <div class="empty-excluded" id="emptyExcluded">
+          No ships excluded yet.<br>
+          <small>Ships you exclude will appear here.</small>
         </div>
-        <div class="tips">Press Spacebar to randomize • Exclusions are saved</div>
       </div>
+      <button id="clearAllExcluded" class="btn-danger" title="Clear all excluded ships">
+        🗑️ Clear All Exclusions
+      </button>
     </section>
 
     <footer class="footer">
-      <small>
-        Works offline with embedded data. "Enrich metadata" requires internet and stores results in your browser.
-      </small>
+      <div class="footer-content">
+        <div class="footer-info">
+          <small>
+            ⚡ Works offline with embedded data • 💾 Settings saved in browser
+          </small>
+        </div>
+        <div class="footer-support">
+          <!-- Ko-fi moved to top -->
+        </div>
+      </div>
     </footer>
   </main>
 
   <script src="main.data.js"></script>
   <script src="main.js"></script>
+  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+  <script type='text/javascript'>
+    // Initialize Ko-fi widget at the top
+    kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'O4O36I75N');
+    kofiwidget2.draw();
+    
+    // Move Ko-fi widget to top container
+    setTimeout(() => {
+      const kofiWidget = document.querySelector('a[href*="ko-fi.com"]');
+      const topContainer = document.getElementById('kofi-widget-container-top');
+      if (kofiWidget && topContainer) {
+        topContainer.appendChild(kofiWidget);
+      }
+    }, 100);
+  </script>
 </body>
 </html>
-
-<!-- redeploy 2025-09-17T10:27:21.1848713+02:00 -->

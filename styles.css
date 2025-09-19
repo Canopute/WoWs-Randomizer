@@ -1,128 +1,832 @@
-/* Basic modern styling */
+/* World of Warships Authentic Port Interface */
 :root {
-  --bg: #0b1220;
-  --panel: #121a2b;
-  --text: #e6ecff;
-  --muted: #9fb0d3;
-  --accent: #4da3ff;
-  --accent-2: #7cf3ff;
-  --border: #21304d;
+  /* WoWS Authentic Colors */
+  --wows-dark-blue: #0d1b2a;
+  --wows-navy: #1b263b;
+  --wows-steel: #415a77;
+  --wows-light-steel: #778da9;
+  --wows-gold: #ffd60a;
+  --wows-bronze: #cd853f;
+  --wows-silver: #c0c0c0;
+  --wows-orange: #ff8500;
+  --wows-red: #e63946;
+  --wows-green: #2d6a4f;
+  
+  /* UI Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e9ecef;
+  --text-muted: #adb5bd;
+  --text-gold: #ffd60a;
+  
+  /* Backgrounds */
+  --port-bg: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
+  --panel-bg: rgba(13, 27, 42, 0.85);
+  --panel-border: rgba(255, 214, 10, 0.3);
+  --glass-bg: rgba(27, 38, 59, 0.7);
+  --glass-border: rgba(119, 141, 169, 0.2);
+  
+  /* Ship Class Colors */
+  --battleship-color: #ff6b6b;
+  --cruiser-color: #4ecdc4;
+  --destroyer-color: #45b7d1;
+  --carrier-color: #96ceb4;
+  --submarine-color: #feca57;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+html, body { 
+  height: 100%; 
+  overflow-x: hidden;
+}
 
 body {
-  margin: 0;
-  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background:
-    radial-gradient(1200px 800px at 80% -10%, #1b2b4b 0%, rgba(11,18,32,0) 60%),
-    radial-gradient(900px 700px at 0% 120%, #0f1a33 0%, rgba(11,18,32,0) 60%),
-    linear-gradient(180deg, #091226 0%, #0b1220 60%, #0a1120 100%);
-  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: 
+    /* Clean ocean atmosphere */
+    radial-gradient(ellipse at center top, rgba(255, 214, 10, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at center bottom, rgba(255, 214, 10, 0.05) 0%, transparent 70%),
+    radial-gradient(circle at 20% 80%, rgba(255, 133, 0, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(119, 141, 169, 0.1) 0%, transparent 50%),
+    var(--port-bg);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Subtle naval atmosphere overlay */
+body::before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: 
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,120V46.29c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z" fill="%23ffd60a" opacity="0.02"></path><path d="M0,120V104.19C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z" fill="%23778da9" opacity="0.03"></path></svg>') repeat-x;
+  background-size: 1200px 120px;
+  opacity: 0.6;
+  animation: gentleWave 30s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes gentleWave {
+  0%, 100% { 
+    background-position-x: 0; 
+    opacity: 0.4;
+  }
+  50% { 
+    background-position-x: 600px; 
+    opacity: 0.6;
+  }
 }
 
 .app {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 20px 48px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+.top-support {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+#kofi-widget-container-top {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+#kofi-widget-container-top:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.center-content {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .center-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  position: relative;
 }
 
-.subtitle { color: var(--muted); margin-top: 8px; }
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--wows-gold), var(--wows-bronze), var(--wows-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  text-shadow: 
+    0 0 20px rgba(255, 214, 10, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+  letter-spacing: 2px;
+}
+
+
+.header .subtitle {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.header .subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--wows-bronze), transparent);
+  border-radius: 1px;
+}
 
 .controls {
-  background: linear-gradient(180deg, rgba(32,46,77,0.35), rgba(14,20,35,0.6));
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255, 214, 10, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.controls::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--wows-gold) 20%, 
+    var(--wows-bronze) 50%, 
+    var(--wows-gold) 80%, 
+    transparent 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.control-section {
+  margin-bottom: 1.5rem;
+}
+
+.control-section:last-child {
+  margin-bottom: 0;
+}
+
+.control-section h3 {
+  color: var(--wows-gold);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.control-section h3::before {
+  content: '⚓';
+  font-size: 1.4rem;
+  color: var(--wows-bronze);
+  text-shadow: 0 0 8px rgba(255, 214, 10, 0.3);
+}
+
+.control-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--wows-gold), transparent);
+}
+
+.control-group {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
   align-items: center;
-  gap: 16px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  justify-content: center;
 }
 
-.control-group { display: flex; align-items: center; gap: 12px; }
-.label { color: var(--muted); font-size: 14px; margin-right: 4px; }
-.checkbox { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+}
+
+.checkbox:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--wows-gold);
+}
+
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--wows-light-steel);
+  border-radius: 4px;
+  background: var(--wows-dark-blue);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background: var(--wows-gold);
+  border-color: var(--wows-gold);
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--wows-dark-blue);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.randomize-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
 
 .btn-primary {
-  margin-left: auto;
-  background: linear-gradient(180deg, var(--accent), #2f7bd6);
-  color: #021026;
-  border: none;
-  font-weight: 700;
-  padding: 12px 18px;
-  border-radius: 12px;
+  background: linear-gradient(135deg, var(--wows-gold), var(--wows-bronze));
+  color: var(--wows-dark-blue);
+  border: 2px solid var(--wows-gold);
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(77,163,255,0.25);
-  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+  box-shadow: 
+    0 6px 20px rgba(255, 214, 10, 0.4),
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -2px 0 rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-.btn-primary:hover { filter: brightness(1.07); box-shadow: 0 14px 32px rgba(77,163,255,0.4); }
-.btn-primary:active { transform: translateY(1px); }
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
 
-.result { margin-top: 20px; }
-.hidden { display: none; }
+.btn-primary:hover::before {
+  left: 100%;
+}
 
-.card {
-  background: linear-gradient(180deg, rgba(28,42,73,0.55), rgba(12,18,32,0.7));
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 20px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.02);
-  animation: pop-in 180ms ease-out;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(255, 214, 10, 0.5),
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -2px 0 rgba(0,0,0,0.3);
+  animation: battlePulse 2s ease-in-out infinite;
+}
+
+@keyframes battlePulse {
+  0%, 100% {
+    box-shadow: 
+      0 8px 25px rgba(255, 214, 10, 0.5),
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      inset 0 -2px 0 rgba(0,0,0,0.3);
+  }
+  50% {
+    box-shadow: 
+      0 8px 35px rgba(255, 214, 10, 0.7),
+      inset 0 1px 0 rgba(255,255,255,0.5),
+      inset 0 -2px 0 rgba(0,0,0,0.3);
+  }
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--wows-steel);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  background: var(--glass-bg);
+  border-color: var(--wows-light-steel);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(119, 141, 169, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--wows-red), #d32f2f);
+  color: white;
+  border: 2px solid var(--wows-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #d32f2f, var(--wows-red));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+}
+
+.result {
+  margin-top: 2rem;
+}
+
+.ship-display {
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 
+    0 12px 40px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255, 214, 10, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  animation: slideInUp 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  max-width: 500px;
+}
+
+.ship-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--wows-gold) 25%, 
+    var(--wows-orange) 50%, 
+    var(--wows-gold) 75%, 
+    transparent 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.ship-display::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%23ffd60a" stroke-width="2" opacity="0.3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ffd60a" stroke-width="1" opacity="0.2"/><circle cx="50" cy="50" r="25" fill="none" stroke="%23ffd60a" stroke-width="1" opacity="0.1"/><polygon points="50,20 55,45 50,50 45,45" fill="%23ffd60a" opacity="0.4"/></svg>') no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+
+.ship-info {
+  text-align: center;
 }
 
 .ship-name {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, var(--wows-gold), var(--text-primary), var(--wows-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
 }
 
-.ship-meta { color: var(--muted); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
-
-.actions { display: flex; gap: 10px; margin-top: 14px; }
-.btn-secondary {
-  background: linear-gradient(180deg, rgba(36,54,92,0.6), rgba(20,28,48,0.7));
-  color: var(--text);
-  border: 1px solid var(--border);
-  padding: 10px 14px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: filter .15s ease, transform .06s ease;
+.ship-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
-.btn-secondary:hover { filter: brightness(1.05); }
-.btn-secondary:active { transform: translateY(1px); }
-
-.tips { color: var(--muted); font-size: 12px; margin-top: 10px; }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.2px;
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(36,54,92,0.6), rgba(20,28,48,0.7));
-  color: var(--text);
-}
-.badge-tier { box-shadow: 0 0 0 2px rgba(77,163,255,0.2) inset; }
-.badge-class { box-shadow: 0 0 0 2px rgba(124,243,255,0.15) inset; }
-.badge-nation { box-shadow: 0 0 0 2px rgba(255,255,255,0.08) inset; }
-
-@keyframes pop-in {
-  from { transform: translateY(6px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--border-subtle);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
 }
 
-.footer { margin-top: 32px; text-align: center; color: var(--muted); }
+.badge-tier {
+  background: linear-gradient(135deg, var(--wows-gold), var(--wows-bronze));
+  color: var(--wows-dark-blue);
+  border-color: var(--wows-gold);
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.badge-class {
+  color: var(--text-primary);
+  font-weight: 700;
+  border-width: 2px;
+}
+
+.badge-class.battleship {
+  background: linear-gradient(135deg, var(--battleship-color), #e55555);
+  border-color: var(--battleship-color);
+}
+
+.badge-class.cruiser {
+  background: linear-gradient(135deg, var(--cruiser-color), #3bb3ab);
+  border-color: var(--cruiser-color);
+}
+
+.badge-class.destroyer {
+  background: linear-gradient(135deg, var(--destroyer-color), #3a9bc1);
+  border-color: var(--destroyer-color);
+}
+
+.badge-class.carrier {
+  background: linear-gradient(135deg, var(--carrier-color), #7fb89a);
+  border-color: var(--carrier-color);
+}
+
+.badge-class.submarine {
+  background: linear-gradient(135deg, var(--submarine-color), #e6b547);
+  border-color: var(--submarine-color);
+  color: var(--wows-dark-blue);
+}
+
+.badge-nation {
+  background: linear-gradient(135deg, var(--wows-steel), var(--wows-light-steel));
+  color: var(--text-primary);
+  border-color: var(--wows-light-steel);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.excluded-ships-bottom {
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(230, 57, 70, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(230, 57, 70, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.excluded-ships-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--wows-red) 25%, 
+    #d32f2f 50%, 
+    var(--wows-red) 75%, 
+    transparent 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.excluded-ships-bottom h3 {
+  color: var(--wows-red);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.excluded-ships-bottom h3::before {
+  content: '🚫';
+}
+
+.excluded-ships-bottom .excluded-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.excluded-ships-bottom .excluded-item {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background: rgba(255, 75, 87, 0.1);
+  border: 1px solid rgba(255, 75, 87, 0.2);
+  border-radius: 25px;
+  transition: all 0.2s ease;
+  min-width: auto;
+  white-space: nowrap;
+}
+
+.excluded-ships-bottom .excluded-item:hover {
+  background: rgba(255, 75, 87, 0.15);
+  transform: translateY(-2px);
+}
+
+.excluded-ships-bottom .empty-excluded {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 2rem;
+  width: 100%;
+}
+
+.excluded-ships-bottom #clearAllExcluded {
+  margin: 0 auto;
+  display: block;
+  padding: 0.75rem 2rem;
+}
+
+.excluded-list {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.excluded-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.excluded-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.excluded-list::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+.excluded-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 75, 87, 0.1);
+  border: 1px solid rgba(255, 75, 87, 0.2);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.excluded-item:hover {
+  background: rgba(255, 75, 87, 0.15);
+  transform: translateX(5px);
+}
+
+.excluded-item-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.btn-restore {
+  background: var(--success-green);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-restore:hover {
+  background: #27ae60;
+  transform: scale(1.05);
+}
+
+.empty-excluded {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.tips {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+}
+
+.footer {
+  color: var(--text-muted);
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px 20px 0 0;
+  margin-top: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-info {
+  text-align: center;
+}
+
+.footer-support {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-info {
+    text-align: center;
+  }
+}
+
+/* Ko-fi button styling to match naval theme */
+#kofi-widget-container {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+/* Custom Ko-fi button hover effect */
+#kofi-widget-container:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Ko-fi integration animations */
+@keyframes kofi-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(114, 164, 242, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(114, 164, 242, 0.6);
+  }
+}
+
+#kofi-widget-container img {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#kofi-widget-container:hover img {
+  animation: kofi-glow 2s ease-in-out infinite;
+}
