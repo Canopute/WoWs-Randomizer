@@ -110,6 +110,7 @@ const embeddedShips = [
   { name: "Z-52", tier: 10, nation: "Germany", class: "Destroyer" },
   { name: "Elbing", tier: 10, nation: "Germany", class: "Destroyer" },
   { name: "Z-42", tier: 10, nation: "Germany", class: "Destroyer" },
+  { name: "Georg Hoffmann", tier: 10, nation: "Germany", class: "Destroyer" },
   { name: "Daring", tier: 10, nation: "UK", class: "Destroyer" },
   { name: "Druid", tier: 10, nation: "UK", class: "Destroyer" },
   { name: "Kléber", tier: 10, nation: "France", class: "Destroyer" },
